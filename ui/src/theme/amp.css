@@ -1,0 +1,454 @@
+/* Identidade visual do Nikolayevsk DARK DSP -- couro preto + hardware prata/cromado,
+   aprovada com o usuario via prevews em Artifact antes de portar pra ca (FR-V01/V02).
+   Os paineis .arch (side ornaments) ficam vazios de proposito -- reservados pra uma imagem
+   de bode real (FR-V03), ainda nao fornecida. */
+
+:root {
+  --leather: #0b0b0c;
+  --chrome-hi: #eef0f2;
+  --chrome: #b7bcc2;
+  --chrome-mid: #7c8288;
+  --chrome-lo: #34373a;
+  --blood: #b81e2a;
+  --blood-hi: #ff4d5a;
+  --text-dim: #8b8e92;
+  --gap: 18px;
+}
+
+.dark-dsp-app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% -10%, #1a1a1c 0%, transparent 60%),
+    #060607;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 18px;
+}
+
+.rig {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* ---------- shared plate texture ---------- */
+.leather {
+  background:
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.015) 0 1px, transparent 1px 3px),
+    radial-gradient(140% 100% at 50% 0%, #1c1c1e 0%, #0e0e0f 55%, #070708 100%);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 2px 10px rgba(0, 0, 0, 0.6),
+    0 18px 40px -14px rgba(0, 0, 0, 0.85);
+}
+
+/* ---------- amp head ---------- */
+.head {
+  position: relative;
+  padding: 26px 28px 22px;
+}
+
+.strap {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 26px;
+  border-radius: 60px / 26px;
+  border: 7px solid #0c0c0d;
+  border-bottom: none;
+  background: linear-gradient(180deg, #1a1a1b, #0a0a0b);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.brand {
+  font: 600 12px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.modes {
+  display: flex;
+  gap: 2px;
+}
+
+.mode-tab {
+  font: 600 12px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+  padding: 7px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, #1b1c1e, #101112);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.mode-tab:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.mode-tab:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.mode-tab.active {
+  background: linear-gradient(180deg, var(--blood-hi), var(--blood) 55%, #6e0f18);
+  color: #fff;
+  border-color: #6e0f18;
+  box-shadow: 0 0 12px rgba(184, 30, 42, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.plate-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  align-items: center;
+  height: 130px;
+  margin-bottom: 22px;
+}
+
+.arch {
+  height: 100%;
+}
+
+.nameplate {
+  height: 100%;
+  border-radius: 4px;
+  background:
+    radial-gradient(120% 140% at 50% 0%, #1f2022 0%, #121213 60%, #0a0a0b 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 3px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nameplate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 4px);
+}
+
+.wordmark {
+  position: relative;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 4.4vw, 40px);
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(180deg, #fdfdfd 0%, #c7cbcf 32%, #8b9096 55%, #c7cbcf 70%, #f4f5f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.25)) drop-shadow(0 3px 2px rgba(0, 0, 0, 0.9));
+  white-space: nowrap;
+}
+
+.control-rail {
+  display: flex;
+  align-items: flex-end;
+  gap: 26px;
+  padding-top: 4px;
+}
+
+.switch-group {
+  display: flex;
+  gap: 14px;
+}
+
+.switch-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch {
+  width: 34px;
+  height: 44px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #1c1d1f, #0b0b0c);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--blood-hi), var(--blood) 60%, #4a0d13);
+  box-shadow: 0 0 10px 2px rgba(255, 60, 70, 0.7), inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.switch.off .led {
+  background: radial-gradient(circle at 35% 30%, #3a3b3d, #17181a 70%);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.switch-label {
+  font: 600 9.5px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+}
+
+.knobs {
+  display: flex;
+  gap: 22px;
+  flex: 1;
+  justify-content: center;
+}
+
+.knob-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 64px;
+}
+
+.knob-unit.disabled {
+  opacity: 0.4;
+}
+
+.knob-label {
+  font: 600 10px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.knob-face {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  touch-action: none;
+  cursor: ns-resize;
+}
+
+.knob-face:focus-visible {
+  outline: 2px solid var(--blood-hi);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+.knob-ticks {
+  position: absolute;
+  inset: 0;
+}
+
+.tick {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 7px;
+  background: var(--chrome-mid);
+  transform-origin: 50% 0%;
+}
+
+.tick span {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  font: 500 8px/1 "Segoe UI", sans-serif;
+  color: var(--text-dim);
+}
+
+.knob-dial {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #3a3b3d 0%, #131314 55%, #050505 100%);
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+.knob-dial::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background: linear-gradient(180deg, var(--chrome-hi), var(--chrome-mid));
+  transform: translateX(-50%);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.input-jack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.jack-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--chrome-hi), var(--chrome-mid) 45%, #24262a 100%);
+  box-shadow: inset 0 0 0 5px #0c0c0d, 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- lower panels ---------- */
+.lower {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+
+.panel {
+  position: relative;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.panel-title {
+  font: 600 10.5px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.pedal {
+  flex: 0 0 auto;
+  padding-top: 30px;
+}
+
+.pedal-sliders {
+  display: flex;
+  gap: 16px;
+}
+
+.fader-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fader-track {
+  width: 8px;
+  height: 68px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #050505, #1a1b1c);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  touch-action: none;
+  cursor: ns-resize;
+}
+
+.fader-track:focus-visible {
+  outline: 2px solid var(--blood-hi);
+  outline-offset: 3px;
+}
+
+.fader-cap {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 12px;
+  margin-left: -10px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--chrome-hi), var(--chrome-mid) 60%, var(--chrome-lo));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.fader-label {
+  font: 600 9px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.footswitch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--blood-hi), var(--blood) 65%, #4a0d13);
+  box-shadow: 0 0 10px 2px rgba(255, 60, 70, 0.6), inset 0 0 2px rgba(0, 0, 0, 0.5);
+  align-self: flex-end;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footswitch.off {
+  background: radial-gradient(circle at 35% 30%, #3a3b3d, #17181a 70%);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.cabinet {
+  flex: 1;
+  padding-top: 30px;
+  justify-content: space-between;
+}
+
+.cabinet-status {
+  font: 500 12px/1.3 "Segoe UI", sans-serif;
+  color: #cfd2d5;
+}
+
+.cabinet-status b {
+  color: var(--chrome-hi);
+  font-weight: 700;
+}
+
+.cabinet-sub {
+  font-size: 10.5px;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.ir-error {
+  font-size: 11px;
+  color: var(--blood-hi);
+  margin-top: 4px;
+}
+
+.btn-ghost {
+  font: 600 11px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.05em;
+  padding: 9px 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, #202123, #131415);
+  color: var(--chrome);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-ghost:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.dark-dsp-footer {
+  text-align: center;
+  font: 500 10.5px/1 "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+  color: #4c4e51;
+  margin-top: 6px;
+}

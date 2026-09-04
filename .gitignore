@@ -1,0 +1,25 @@
+# Build outputs
+build/
+build-*/
+cmake-build-*/
+*.o
+*.obj
+
+# IDE / editor
+.vs/
+.vscode/
+*.user
+.idea/
+*.xcodeproj/
+*.xcworkspace/
+.DS_Store
+
+# JUCE / CMake FetchContent cache
+_deps/
+CMakeFiles/
+CMakeCache.txt
+
+# UI (Vite/React)
+ui/node_modules/
+ui/dist/
+ui/.vite/
