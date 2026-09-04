@@ -1,6 +1,6 @@
 # Nikolayevsk DARK DSP
 
-<img width="1279" height="775" alt="image" src="https://github.com/user-attachments/assets/0c33ade7-5924-496f-8b9e-d82472984886" />
+<img width="1279" height="775" alt="Nikolayevsk DARK DSP" src="./Nikolayevsk%20DARK%20DSP.jpeg" />
 
 Plugin de guitarra VST3, **gratuito e open source (GPLv3)**, signature do
 [Nikolayevsk](https://github.com/nikolayevsk404) — guitarrista brasileiro de progressive power
