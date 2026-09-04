@@ -13,6 +13,7 @@ cmake-build-*/
 *.xcodeproj/
 *.xcworkspace/
 .DS_Store
+*:Zone.Identifier
 
 # JUCE / CMake FetchContent cache
 _deps/
