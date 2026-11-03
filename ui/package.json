@@ -20,7 +20,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "oxlint": "^1.79.0",
     "typescript": "~6.0.2",
-    "vite": "^6.3.5",
+    "vite": "^6.4.5",
     "vite-plugin-singlefile": "^2.3.3"
   }
 }
